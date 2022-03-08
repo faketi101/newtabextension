@@ -1,0 +1,91 @@
+.settings{
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    color: var(--primary);
+
+    
+}
+.settings a{
+    color: var(--primary);
+
+}
+.visible{
+
+    animation: animate_in .5s ease-in;
+    animation-fill-mode: forwards;
+}
+.invis{
+    animation: animate_inv .5s ease-in;
+    animation-fill-mode: forwards;
+    
+}
+@keyframes animate_in{
+    0%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes animate_inv{
+    0%{
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+}
+.setting_menus{
+    background: rgba(0,0,0,0.4);
+    width: 300px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    padding: 8px;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    font-family: 'Smooch Sans' !important;
+    font-size: 18px !important;
+    font-weight: 400;
+}
+.setting_menus a, .setting_menus p{
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0;
+}
+.setting_menus .site_links label input, .setting_menus input[type="text"], .setting_menus select{
+    float: right;
+    background: rgba(0,0,0,0.6);
+    color: var(--primary);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--primary);
+    transition: all .5s ease;
+}
+.setting_menus .site_links label input:focus, .setting_menus input[type="text"]:focus, .setting_menus select:focus{
+    border-bottom: 1px solid var(--hover);
+}
+#view_curr_image:hover{
+    color: var(--hover);
+}
+.form_submin_btn{
+    border-radius: 5px;
+    background: var(--primary);
+    outline: none;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s ease;
+    margin: 5px 0;
+    font-weight: bold;
+    padding: 5px;
+}
+.form_submin_btn:hover{
+    background: var(--hover);
+}
