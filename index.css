@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanalei&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 @import "./style.css";
+@import "./Todo_NOte/main.css";
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@300;400&display=swap');
 :root{
     --primary: #ffffff;
@@ -44,10 +45,6 @@ body{
     left: 50%; */
     width: 90%;
     margin: auto;
-    text-align: center;
-}
-.ass-hi{
-    margin: 0 auto;
     text-align: center;
 }
 .ass-hi h1{
@@ -120,8 +117,8 @@ body{
     background: rgba(0, 0, 0, 0.342);
     cursor: pointer;
     position: absolute;
-    top: 42px;
-    right: 0px;
+    top: 26px;
+    right: 34px;
 }
 .assistant .search-btn:hover{
     border: 2px solid #1DB954;

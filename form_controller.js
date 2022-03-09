@@ -1,12 +1,11 @@
 const settings = document.getElementById("setting_btn");
 const setting_menus = document.getElementById("setting_menus");
-const custom_bg_box = document.getElementById("custom");
-const __custom = document.getElementById("__custom");
-const custom_input = document.getElementById("custom_input");
+const todo_open_off = document.getElementById("todo_open_off");
+const todo_section = document.getElementById("todo_section");
 //setting button css
-custom_bg_box.addEventListener("change", custom_check_handler);
-
 settings.addEventListener("click", () => {
+  settings.classList.toggle("rotate_180");
+
   if (setting_menus.classList.contains("visible")) {
     setting_menus.classList.remove("visible");
     setting_menus.classList.add("invis");
@@ -15,37 +14,18 @@ settings.addEventListener("click", () => {
     setting_menus.classList.remove("invis");
   }
 });
-__custom.addEventListener("change", () => {
-  console.log(__custom.value);
-  let l_custom = document.getElementById("l_custom");
-  let l_custom_local = document.getElementById("l_custom_local");
-  if (__custom.value === "local") {
-    l_custom.style.display = "none";
-    l_custom_local.style.display = "block";
-  } else if (__custom.value === "unsplash") {
-    l_custom.style.display = "block";
-    l_custom_local.style.display = "none";
+todo_open_off.addEventListener("click", () => {
+  todo_open_off.classList.toggle("rotate_180");
+  if (todo_section.classList.contains("visibler")) {
+    todo_section.classList.remove("visibler");
+    todo_section.classList.add("invisr");
+  } else {
+    todo_section.classList.add("visibler");
+    todo_section.classList.remove("invisr");
   }
 });
 
-function custom_check_handler() {
-  if (custom_bg_box.checked) {
-    __custom.style.display = "block";
-    custom_input.style.display = "block";
-    let bg_type = document.getElementById("bg_type").querySelectorAll("input");
-    for (const prop in bg_type) {
-      if (bg_type.hasOwnProperty(prop)) {
-        let element = bg_type[prop];
-        if (element.checked && element.id !== "custom") {
-          element.checked = false;
-        }
-      }
-    }
-  } else {
-    __custom.style.display = "none";
-    custom_input.style.display = "none";
-  }
-}
+
 const setting_form = document.getElementById("setting_form");
 setting_form.addEventListener("submit", form_handler);
 
@@ -57,10 +37,8 @@ function form_handler(e) {
   }
 
   const user_name = document.getElementById("user_name").value;
-  const custom_bg = document.getElementById("l_custom").value;
-  const custom_local = document.getElementById("l_custom_local").value;
-  console.log(custom_local);
   const gender = document.getElementById("gender").value;
+  const api_id = document.getElementById("api_id").value;
   const bg_type = document.getElementById("bg_type").querySelectorAll("input");
   const site_links = document
     .getElementById("site_links")
@@ -75,9 +53,7 @@ function form_handler(e) {
     backgrounds,
     links,
     link_text,
-    custom_bg,
-    custom_local,
-    __custom: __custom.value,
+    api_id,
   };
 
   for (const prop in bg_type) {
@@ -109,23 +85,19 @@ function form_handler(e) {
 function save_user(data) {
   localStorage.setItem("_nt_username", data.user_name);
   localStorage.setItem("_nt_gender", data.gender);
+  localStorage.setItem("_nt_api_id", data.api_id);
   localStorage.setItem("_nt_backgrounds", JSON.stringify(data.backgrounds));
   localStorage.setItem("_nt_links", JSON.stringify(data.links));
   localStorage.setItem("_nt_link_text", JSON.stringify(data.link_text));
-  localStorage.setItem("_nt_custom_bg", data.custom_bg);
-  localStorage.setItem("_nt_custom_bg_local", data.custom_local);
-  localStorage.setItem("_nt_custom___custom", data.__custom);
 }
 
 function getLocalData() {
   const user_name = localStorage.getItem("_nt_username");
   const gender = localStorage.getItem("_nt_gender");
+  const api_id = localStorage.getItem("_nt_api_id");
   const backgrounds = JSON.parse(localStorage.getItem("_nt_backgrounds"));
   const links = JSON.parse(localStorage.getItem("_nt_links"));
   const link_text = JSON.parse(localStorage.getItem("_nt_link_text"));
-  const custom_bg = localStorage.getItem("_nt_custom_bg");
-  const custom_bg_local = localStorage.getItem("_nt_custom_bg_local");
-  const __custom = localStorage.getItem("_nt_custom___custom");
 
   if (!user_name) {
     return form_handler();
@@ -133,27 +105,23 @@ function getLocalData() {
 
   const dom_user_name = document.getElementById("user_name");
   const dom_gender = document.getElementById("gender");
+  const dom_api_id = document.getElementById("api_id");
   const showing_links = document.getElementById("showing_links");
   const user_call = document.getElementById("user_call");
   const showing_name = document.getElementById("showing_name");
-  const dom_custom_bg = document.getElementById("l_custom");
-  const dom__custom = document.getElementById("__custom");
 
   showing_links.innerHTML = "";
 
   //restoring setting inputs to database vlaues
   dom_user_name.value = user_name;
   dom_gender.value = gender;
+  dom_api_id.value = api_id;
   if (gender === "female") {
     user_call.innerText = "mam";
   } else {
     user_call.innerText = "sir";
   }
-
-  dom_custom_bg.value = custom_bg;
-  dom__custom.value = __custom;
-  // dom_custom_bg_local.value = custom_bg_local;
-
+  setUser();
   showing_name.innerText = user_name;
   backgrounds.map((bg) => {
     // console.log(bg);
@@ -230,5 +198,3 @@ function sendLink(element, inp_element) {
     return u;
   }
 }
-custom_check_handler();
-after();
