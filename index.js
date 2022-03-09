@@ -51,16 +51,16 @@ $(document).ready(function () {
   var hr = date.getHours();
 
   if (hr >= 0 && hr < 7) {
-    $(".ass-hi").html(`<span id="showing_name">${user}</span>`);
+    $(".ass-hi").html(`<h1>Good Night <span id="showing_name">${user}</span></h1>`);
     document.title = `Good Night ${user}`;
   } else if (hr >= 7 && hr < 12) {
-    $(".ass-hi").html(`<span id="showing_name">${user}</span>`);
+    $(".ass-hi").html(`<h1>Good Morning <span id="showing_name">${user}</span></h1>`);
     document.title = `Good Morning ${user}`;
   } else if (hr >= 12 && hr < 16) {
-    $(".ass-hi").html(`<span id="showing_name">${user}</span>`);
+    $(".ass-hi").html(`<h1>Good Morning <span id="showing_name">${user}</span></h1>`);
     document.title = `Good Noon ${user}`;
   } else if (hr >= 16 && hr < 18) {
-    $(".ass-hi").html(`<span id="showing_name">${user}</span>`);
+    $(".ass-hi").html(`<h1>Good Morning <span id="showing_name">${user}</span></h1>`);
     $(".ass-hi").css({
       font: "75px Long Cang",
       width: "750px",
