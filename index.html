@@ -65,7 +65,7 @@
                 </div>
                 <div class="gender" id="">
                     <a href="#"></i> Gender: <select name="gender" id="gender"><option selected value="male">Male</option> <option value="female">Female</option></select></a>
-                </div><br>
+                </div>
 
                 <div class="user_name" >
                     <p>Name: <input autocomplete=false id="user_name" name="user_name" type="text" value="User"></p>
@@ -73,16 +73,25 @@
 
                 <div class="bg_type" id="bg_type">
                     <p>Backgrounds:</p>
-                    <input checked type="checkbox" id="cats" name="cat" value="cat">
+                    <input type="checkbox" id="cats" name="cat" value="cat">
                 <label for="cats"> Cats</label><br>
-                <input checked type="checkbox" id="cars" name="car" value="car">
+                <input type="checkbox" id="cars" name="car" value="car">
                 <label for="car"> Cars</label><br>
                 <input type="checkbox" id="nature" name="nature" value="nature">
                 <label for="nature"> Nature</label><br>
                 <input type="checkbox" id="forest" name="forest" value="forest">
                 <label for="forest"> Forest</label><br>
                 <input type="checkbox" id="random" name="random" value="random">
-                <label for="random"> Random</label>
+                <label for="random"> Random</label><br>
+
+                <input type="checkbox" class="a" id="custom" name="custom" value="custom">
+                <label for="custom"> Custom <select name="custom_slection" style="display: none;" id="__custom"><option selected id="_local" value="local">Local Folder</option></select></label>
+                <!-- <option value="unsplash">Unsplash</option> -->
+                <!-- //<input type="text" id="l_custom" value="random"> -->
+                <div id="custom_input" style="display: none;">
+                    <input type="text" id="l_custom" value="random" style="display:none">
+                   <input type="file" id="l_custom_local" accept=".png,.jpeg,jpg,.gif">
+                </div>
                  </div><br>
 
                  <div class="site_links" id="site_links">
@@ -91,29 +100,29 @@
                     <input type="checkbox" name="gclassroom" id="gclassroom">
                     <label for="gclassroom">Classroom<input type="text" id="l_gclassroom" value="https://classroom.google.com"></label><br>
 
-                    <input checked type="checkbox" name="gmail" id="gmail">
+                    <input  type="checkbox" name="gmail" id="gmail">
                     <label  for="gmail">Gmail<input type="text" id="l_gmail" value="https://gmail.com"></label><br>
 
-                    <input checked type="checkbox" name="github" id="github">
+                    <input  type="checkbox" name="github" id="github">
                     <label for="gitHub">Github<input type="text" id="l_github" value="https://github.com"></label><br>
                     
-                    <input checked type="checkbox" name="youtube" id="youtube">
+                    <input  type="checkbox" name="youtube" id="youtube">
                     <label for="youtube">Youtube<input type="text" id="l_youtube" value="https://youtube.com"></label><br>
 
-                    <input checked type="checkbox" name="facebook" id="facebook">
+                    <input type="checkbox" name="facebook" id="facebook">
                     <label for="facebook">Facebook<input type="text" id="l_facebook" value="https://facebook.com"></label><br>
 
-                    <input checked type="checkbox" name="instagram" id="instagram">
+                    <input  type="checkbox" name="instagram" id="instagram">
                     <label for="instagram">Instagram<input type="text" id="l_instagram" value="https://instagram.com"></label><br>
 
 
-                    <input checked type="checkbox" name="discord" id="discord">
+                    <input  type="checkbox" name="discord" id="discord">
                     <label for="discord">Discord<input type="text" id="l_discord" value="https://discord.com/channels/@me"></label><br>
 
                     <input type="checkbox" name="whatsapp" id="whatsapp">
                     <label for="whatsapp">WhatsApp<input type="text" id="l_whatsapp" value="https://web.whatsapp.com"></label><br>
 
-                    <input checked type="checkbox" name="spotify" id="spotify">
+                    <input type="checkbox" name="spotify" id="spotify">
                     <label for="spotify">Spotify<input type="text"  id="l_spotify" value="https://spotify.com"></label><br>
 
                     
@@ -127,22 +136,7 @@
             </div>
                 <i id="setting_btn" class="fa-solid fa-gear"></i>
             </div>
-            <!-- <div class="back-chng-btn-wrap">
-                <div class="back-chng-btn-all">
-                    <span class="back-chng-btn btn-1 btn-act"></span>
-                    <span class="back-chng-btn btn-2"></span>
-                    <span class="back-chng-btn btn-3"></span>
-                    <span class="back-chng-btn btn-4"></span>
-                    <span class="back-chng-btn btn-5"></span>
-                    <span class="back-chng-btn btn-6"></span>
-                    <span class="back-chng-btn btn-7"></span>
-                    <span class="back-chng-btn btn-8"></span>
-                    <span class="back-chng-btn btn-9"></span>
-                    <span class="back-chng-btn btn-10"></span>
-                    <span class="back-chng-btn btn-11"></span>
-                    <span class="back-chng-btn btn-12"></span>
-                </div>
-            </div> -->
+            
 
         </div>
     </div>
