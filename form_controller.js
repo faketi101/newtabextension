@@ -194,7 +194,7 @@ function sendLink(element, inp_element) {
     return u;
   } else if (element.id == "instagram") {
     let u = `<div class="link-block"><a href=${inp_element.value} class="instagram"
-        title="Spotify"><i class="fa-brands fa-instagram-square"></i></a></div>`;
+        title="Instagram"><i class="fa-brands fa-instagram-square"></i></a></div>`;
     return u;
   }
 }
