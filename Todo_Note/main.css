@@ -36,6 +36,9 @@
       max-height: 350px;
       overflow-y: scroll;
   }
+  .none{
+      transform: translateX(575px) !important;
+  }
   #todo_section .div-todo{
       min-width: 600px;
       float: left;

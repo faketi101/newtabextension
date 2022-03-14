@@ -16,13 +16,18 @@ settings.addEventListener("click", () => {
 });
 todo_open_off.addEventListener("click", () => {
   todo_open_off.classList.toggle("rotate_180");
+  
   if (todo_section.classList.contains("visibler")) {
     todo_section.classList.remove("visibler");
     todo_section.classList.add("invisr");
-  } else {
+  } else if (todo_section.classList.contains("invisr")) {
     todo_section.classList.add("visibler");
     todo_section.classList.remove("invisr");
+  } else if (todo_section.classList.contains("none")) {
+    todo_section.classList.add("visibler");
+    todo_section.classList.remove("none");
   }
+
 });
 
 

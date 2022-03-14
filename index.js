@@ -61,17 +61,7 @@ $(document).ready(function () {
     document.title = `Good Noon ${user}`;
   } else if (hr >= 16 && hr < 18) {
     $(".ass-hi").html(`<h1>Good After Noon <span id="showing_name">${user}</span></h1>`);
-    $(".ass-hi").css({
-      font: "75px Long Cang",
-      width: "750px",
-    });
-    $(".ass-hi h1").css({
-      font: "75px Long Cang",
-      "font-weight": "bold",
-      "letter-spacing": "2px",
-      color: "#fff",
-      margin: "0",
-    });
+   
     document.title = `Good After Noon ${user}`;
   } else if (hr >= 18 && hr < 23) {
     $(".ass-hi").html(
