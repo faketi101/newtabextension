@@ -34,7 +34,7 @@ todo_open_off.addEventListener("click", () => {
 const setting_form = document.getElementById("setting_form");
 setting_form.addEventListener("submit", form_handler);
 
-getLocalData();
+
 
 function form_handler(e) {
   if (e) {
@@ -139,6 +139,7 @@ function getLocalData() {
     let element = document.getElementById(bg);
     element.checked = true;
     let inp_element = document.getElementById(`l_${bg}`);
+
     showing_links.innerHTML += sendLink(element, inp_element);
   });
 
@@ -163,7 +164,7 @@ function getLocalData() {
 }
 
 function sendLink(element, inp_element) {
-  //   console.log(element.id);
+  // console.log(inp_element.value);
   if (element.id === "gclassroom") {
     let u = `<div class="link-block"><a href=${inp_element.value}  class="class1"
         title="Classroom"><i class="fas fa-chalkboard-teacher"></i></a></div>`;
@@ -203,3 +204,4 @@ function sendLink(element, inp_element) {
     return u;
   }
 }
+getLocalData();

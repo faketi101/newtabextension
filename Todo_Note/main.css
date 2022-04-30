@@ -35,6 +35,7 @@
       outline: none;
       max-height: 350px;
       overflow-y: scroll;
+      z-index: 5;
   }
   .none{
       transform: translateX(575px) !important;

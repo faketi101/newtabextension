@@ -95,3 +95,7 @@ function getImageUrl(arr, l) {
     return `${random_2 + 1}.jpg`;
   }
 }
+
+setTimeout(() => {
+  document.getElementById("form_submin_btn").click();
+}, 1000);
